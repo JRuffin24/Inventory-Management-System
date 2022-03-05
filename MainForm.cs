@@ -17,7 +17,7 @@ namespace Inventory_Management_System
             InitializeComponent();
 
             //set the data source
-            mainScreenPartsDataGrid.DataSource = Program.allParts;
+            mainScreenPartsDataGrid.DataSource = Inventory.AllParts;
            // mainScreenDataGridProducts.DataSource = Program.products;
 
 
@@ -27,7 +27,7 @@ namespace Inventory_Management_System
             //Make grid read only
             mainScreenPartsDataGrid.ReadOnly = true;
 
-            //Turn off mutliselect
+            //Turn off multiselect
             mainScreenPartsDataGrid.MultiSelect = false;
 
             //remove bottom empty row
@@ -51,11 +51,24 @@ namespace Inventory_Management_System
             addForm.ShowDialog();
             
         }
-
+       
         private void modifyParts_Click(object sender, EventArgs e)
         {
-            modifyPartForm modifyForm = new modifyPartForm();
-            modifyForm.ShowDialog();
+            if (mainScreenPartsDataGrid.SelectedRows.Count > 0)
+            {
+                 var selectedPart = (Part)mainScreenPartsDataGrid.CurrentRow.DataBoundItem;
+
+                 modifyPartForm modifyForm = new modifyPartForm(selectedPart);
+
+                 modifyForm.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("Please select a part.");
+            }
+
+
         }
 
         private void deletePart_Click(object sender, EventArgs e)

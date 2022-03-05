@@ -30,13 +30,13 @@
         {
             this.modifyPartInHouseRadioButton = new System.Windows.Forms.RadioButton();
             this.modifyPartOutsourcedRadioButton = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.modifyPartIDTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartNameTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartInventoryTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartMinTextBox = new System.Windows.Forms.TextBox();
+            this.modifyPartMorCTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.modifyPartsIDLabel = new System.Windows.Forms.Label();
             this.modiftPartNameLabel = new System.Windows.Forms.Label();
@@ -71,54 +71,54 @@
             this.modifyPartOutsourcedRadioButton.Text = "Outsourced";
             this.modifyPartOutsourcedRadioButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // modifyPartIDTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.modifyPartIDTextBox.Location = new System.Drawing.Point(141, 85);
+            this.modifyPartIDTextBox.Name = "modifyPartIDTextBox";
+            this.modifyPartIDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartIDTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // modifyPartNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.modifyPartNameTextBox.Location = new System.Drawing.Point(141, 135);
+            this.modifyPartNameTextBox.Name = "modifyPartNameTextBox";
+            this.modifyPartNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartNameTextBox.TabIndex = 3;
             // 
-            // textBox3
+            // modifyPartInventoryTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(141, 182);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.modifyPartInventoryTextBox.Location = new System.Drawing.Point(141, 182);
+            this.modifyPartInventoryTextBox.Name = "modifyPartInventoryTextBox";
+            this.modifyPartInventoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartInventoryTextBox.TabIndex = 4;
             // 
-            // textBox4
+            // modifyPartPriceTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(141, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
+            this.modifyPartPriceTextBox.Location = new System.Drawing.Point(141, 225);
+            this.modifyPartPriceTextBox.Name = "modifyPartPriceTextBox";
+            this.modifyPartPriceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartPriceTextBox.TabIndex = 5;
             // 
-            // textBox5
+            // modifyPartMaxTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(141, 273);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.modifyPartMaxTextBox.Location = new System.Drawing.Point(141, 273);
+            this.modifyPartMaxTextBox.Name = "modifyPartMaxTextBox";
+            this.modifyPartMaxTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartMaxTextBox.TabIndex = 6;
             // 
-            // textBox6
+            // modifyPartMinTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(337, 273);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
+            this.modifyPartMinTextBox.Location = new System.Drawing.Point(337, 273);
+            this.modifyPartMinTextBox.Name = "modifyPartMinTextBox";
+            this.modifyPartMinTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartMinTextBox.TabIndex = 7;
             // 
-            // textBox7
+            // modifyPartMorCTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(141, 322);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 8;
+            this.modifyPartMorCTextBox.Location = new System.Drawing.Point(141, 322);
+            this.modifyPartMorCTextBox.Name = "modifyPartMorCTextBox";
+            this.modifyPartMorCTextBox.Size = new System.Drawing.Size(100, 20);
+            this.modifyPartMorCTextBox.TabIndex = 8;
             // 
             // label1
             // 
@@ -226,13 +226,13 @@
             this.Controls.Add(this.modiftPartNameLabel);
             this.Controls.Add(this.modifyPartsIDLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.modifyPartMorCTextBox);
+            this.Controls.Add(this.modifyPartMinTextBox);
+            this.Controls.Add(this.modifyPartMaxTextBox);
+            this.Controls.Add(this.modifyPartPriceTextBox);
+            this.Controls.Add(this.modifyPartInventoryTextBox);
+            this.Controls.Add(this.modifyPartNameTextBox);
+            this.Controls.Add(this.modifyPartIDTextBox);
             this.Controls.Add(this.modifyPartOutsourcedRadioButton);
             this.Controls.Add(this.modifyPartInHouseRadioButton);
             this.Name = "modifyPartForm";
@@ -246,13 +246,13 @@
 
         private System.Windows.Forms.RadioButton modifyPartInHouseRadioButton;
         private System.Windows.Forms.RadioButton modifyPartOutsourcedRadioButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox modifyPartIDTextBox;
+        private System.Windows.Forms.TextBox modifyPartNameTextBox;
+        private System.Windows.Forms.TextBox modifyPartInventoryTextBox;
+        private System.Windows.Forms.TextBox modifyPartPriceTextBox;
+        private System.Windows.Forms.TextBox modifyPartMaxTextBox;
+        private System.Windows.Forms.TextBox modifyPartMinTextBox;
+        private System.Windows.Forms.TextBox modifyPartMorCTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label modifyPartsIDLabel;
         private System.Windows.Forms.Label modiftPartNameLabel;

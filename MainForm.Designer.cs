@@ -193,9 +193,9 @@
             // mainScreenPartsDataGrid
             // 
             this.mainScreenPartsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mainScreenPartsDataGrid.Location = new System.Drawing.Point(39, 114);
+            this.mainScreenPartsDataGrid.Location = new System.Drawing.Point(26, 114);
             this.mainScreenPartsDataGrid.Name = "mainScreenPartsDataGrid";
-            this.mainScreenPartsDataGrid.Size = new System.Drawing.Size(363, 183);
+            this.mainScreenPartsDataGrid.Size = new System.Drawing.Size(375, 183);
             this.mainScreenPartsDataGrid.TabIndex = 16;
             this.mainScreenPartsDataGrid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.bindingComplete);
             // 
@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 457);
+            this.ClientSize = new System.Drawing.Size(1692, 914);
             this.Controls.Add(this.mainScreenDataGridProducts);
             this.Controls.Add(this.mainScreenPartsDataGrid);
             this.Controls.Add(this.exitButton);

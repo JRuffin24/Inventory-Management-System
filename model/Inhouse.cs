@@ -22,13 +22,5 @@ namespace Inventory_Management_System
             MachineID = machineID;
         }
       
-     /*    public override int PartID { get; set; }
-        public override string Name { get; set; }
-        public override decimal Price { get; set ; }
-        public override int InStock { get ; set; }
-        public override int Min { get ; set ; }
-        public override int Max { get; set; }
-
-   */
     }
 }

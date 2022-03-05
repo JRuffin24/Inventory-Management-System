@@ -11,18 +11,14 @@ namespace Inventory_Management_System
     
     public class Inventory
     {
-       // public static System.Windows.Forms.FormCollection OpenForms { get; }
-        //public event Action<string> GetPartName;
-
-       // Form form1 = Application.OpenForms["addPartForm"];
-       /* public Inventory(BindingList<Product> products, BindingList<Part> allParts)
+       
+        public Inventory(BindingList<Product> products, BindingList<Part> allParts)
         {
             Products = products;
             AllParts = allParts;
-        } */
-       
-      
-        public static BindingList<Product> Products { get; set; }
+        } 
+            
+        public BindingList<Product> Products { get; set; }
         public static BindingList<Part> AllParts { get; set; }
 
 
@@ -30,8 +26,44 @@ namespace Inventory_Management_System
         {
             AllParts.Add(part);           
         }
+        public void updatePart(int partID, Part part)
+        {
+            foreach (Part item in AllParts)
+            {
+                if (item.PartID == partID)
+                {
+                    if(item.Name != part.Name)
+                    {
+                        item.Name = part.Name;
+                    }
 
-     
-     
+                }
+            }
+        }
+        public void deletePart(Part part)
+        {
+
+        }
+        public void lookupPart(Part part)
+        {
+
+        }
+        public void addProduct(Product product)
+        {
+
+        }
+        public void deleteProduct(int productID)
+        {
+
+        }
+        public void lookupProduct(int productID)
+        {
+
+        }
+
+        public void updateProduct(int productID, Product product)
+        {
+
+        }
     }
 }

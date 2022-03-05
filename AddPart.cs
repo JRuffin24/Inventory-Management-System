@@ -15,6 +15,7 @@ namespace Inventory_Management_System
 
     {
         Inhouse inhouse = new Inhouse();
+        Outsourced outSourced = new Outsourced();
         public static string partID { get; set; }
 
         
@@ -23,14 +24,32 @@ namespace Inventory_Management_System
         public addPartForm()
         {
             InitializeComponent();
-      /*      addPartIDTextBox.ReadOnly = true;
-            inhouse.PartID = Convert.ToInt32(addPartIDTextBox.Text);
-            inhouse.Name = addPartNameTextBox.Text;
-            inhouse.Price = Convert.ToDecimal(addPartPriceTextBox.Text);
-            inhouse.InStock = Convert.ToInt32(addPartInventoryTextBox.Text);
-            inhouse.Min = Convert.ToInt32(addPartMinTextBox.Text);
-            inhouse.Max = Convert.ToInt32(addPartMaxTextBox.Text);
-      */
+            addPartInHouse.Checked = true;
+            addPartMorCLabel.Text = "Machine";
+            autoGenerateID();
+        }
+        public void autoGenerateID()
+        {
+            string num = "123456789";
+            int len = num.Length;
+            string otp = string.Empty;
+            int otpdigit = 5;
+            string finaldigit;
+
+            int getindex;
+
+            for (int i = 0; i < otpdigit; i++)
+            {
+                do
+                {
+                    getindex = new Random().Next(0, len);
+                    finaldigit = num.ToCharArray()[getindex].ToString();
+                }
+                while (otp.IndexOf(finaldigit) != -1);
+                otp += finaldigit;
+            }
+            addPartIDTextBox.Text = (otp);
+
         }
 
         private void addPartCancelButton_Click(object sender, EventArgs e)
@@ -40,22 +59,25 @@ namespace Inventory_Management_System
 
         private void addPartSaveButton_Click(object sender, EventArgs e)
         {
+            
+
             if (addPartInHouse.Checked)
             {
                 var inHouseNewPart = new Inhouse
                 {
-                    PartID = 2, 
+                    PartID = Convert.ToInt32(addPartIDTextBox.Text), 
                     Name = addPartNameTextBox.Text,
                     Price = Convert.ToDecimal(addPartPriceTextBox.Text),
                     InStock = Convert.ToInt32(addPartInventoryTextBox.Text),
                     Min = Convert.ToInt32(addPartMinTextBox.Text),
                     Max = Convert.ToInt32(addPartMaxTextBox.Text),
-                    MachineID = Convert.ToInt32(addPartMachineIDTextBox.Text)
+                    MachineID = Convert.ToInt32(addPartMorCTextBox.Text)
                 };
                 Inventory.addPart(inHouseNewPart);
             }
             else if (addPartOutsourced.Checked)
             {
+                
                 var outsourcedNewPart = new Outsourced
                 {
                     PartID = Convert.ToInt32(addPartIDTextBox.Text),
@@ -64,8 +86,9 @@ namespace Inventory_Management_System
                     InStock = Convert.ToInt32(addPartInventoryTextBox.Text),
                     Min = Convert.ToInt32(addPartMinTextBox.Text),
                     Max = Convert.ToInt32(addPartMaxTextBox.Text),
-                    CompanyName = addPartMachineIDTextBox.Text
+                    CompanyName = addPartMorCTextBox.Text
                 };
+                Inventory.addPart(outsourcedNewPart);
             }
             
             Close();
@@ -85,5 +108,18 @@ namespace Inventory_Management_System
                 e.Handled = true;
             }
         }
+
+        private void addPartOutsourced_CheckedChanged(object sender, EventArgs e)
+        {
+            addPartMorCLabel.Text = "Company";
+            
+        }
+
+        private void addPartInHouse_CheckedChanged(object sender, EventArgs e)
+        {
+            addPartMorCLabel.Text = "Machine";
+
+        }
+        
     }
 }

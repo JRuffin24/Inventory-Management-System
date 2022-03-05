@@ -8,6 +8,11 @@ namespace Inventory_Management_System
 {
     public class Outsourced : Part
     {
+
+        public Outsourced()
+        {
+
+        }
         public Outsourced(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
         {
             PartID = partID;

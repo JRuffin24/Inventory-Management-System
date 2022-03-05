@@ -1,0 +1,15 @@
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.AssemblyReference.cache
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.SuggestedBindingRedirects.cache
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.mainForm.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.addPartForm.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.modifyPartForm.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.addProductForm.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.modifyProductForm.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory_Management_System.Properties.Resources.resources
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.GenerateResource.cache
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.csproj.CoreCompileInputs.cache
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\bin\Debug\Inventory Management System.exe.config
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\bin\Debug\Inventory Management System.exe
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\bin\Debug\Inventory Management System.pdb
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.exe
+C:\Users\Jnr\Source\Repos\JRuffin24\Inventory-Management-System\obj\Debug\Inventory Management System.pdb
