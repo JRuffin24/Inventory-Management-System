@@ -13,7 +13,7 @@ namespace Inventory_Management_System
         {
 
         }
-        public Outsourced(int partID, string name, decimal price, int inStock, int min, int max, string companyName)
+        public Outsourced(int partID, string name, decimal price, int inStock, int min, int max, int companyID)
         {
             PartID = partID;
             Name = name;
@@ -21,9 +21,9 @@ namespace Inventory_Management_System
             InStock = inStock;
             Min = min;
             Max = max;
-            CompanyName = companyName;
+            CompanyID = companyID;
         }
-        public string CompanyName { get; set; }
+        public int CompanyID { get; set; }
 /*        public override int PartID { get; set; }
         public override string Name { get; set; }
         public override decimal Price { get; set; }

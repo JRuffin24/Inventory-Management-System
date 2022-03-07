@@ -18,26 +18,31 @@ namespace Inventory_Management_System
 
             //set the data source
             mainScreenPartsDataGrid.DataSource = Inventory.AllParts;
-           // mainScreenDataGridProducts.DataSource = Program.products;
+            mainScreenDataGridProducts.DataSource = Program.products;
 
 
             //sets the selection mode to full row instead of individual cell
             mainScreenPartsDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            mainScreenDataGridProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             //Make grid read only
             mainScreenPartsDataGrid.ReadOnly = true;
+            mainScreenDataGridProducts.ReadOnly = true;
 
             //Turn off multiselect
             mainScreenPartsDataGrid.MultiSelect = false;
+            mainScreenDataGridProducts.MultiSelect = false;
 
             //remove bottom empty row
             mainScreenPartsDataGrid.AllowUserToAddRows = false;
+            mainScreenDataGridProducts.AllowUserToAddRows = false;
         }
        
         //clear selection upon data load
          private void bindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             mainScreenPartsDataGrid.ClearSelection();
+            mainScreenDataGridProducts.ClearSelection();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -78,14 +83,26 @@ namespace Inventory_Management_System
 
         private void addProducts_Click(object sender, EventArgs e)
         {
-            addProductForm addProduct = new addProductForm();
-            addProduct.ShowDialog();
+                addProductForm addProduct = new addProductForm();
+                addProduct.ShowDialog();
+            
+            
         }
 
         private void modifyProduct_Click(object sender, EventArgs e)
         {
-            modifyProductForm modifyProduct = new modifyProductForm();
-            modifyProduct.ShowDialog();
+            if(mainScreenDataGridProducts.SelectedRows.Count > 0)
+            {
+                var selectedProduct = (Product)mainScreenDataGridProducts.CurrentRow.DataBoundItem;
+                
+                modifyProductForm modifyProduct = new modifyProductForm(selectedProduct);
+                
+                modifyProduct.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select a product.");
+            }
         }
     }
 }

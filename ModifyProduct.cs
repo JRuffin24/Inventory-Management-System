@@ -17,6 +17,17 @@ namespace Inventory_Management_System
             InitializeComponent();
         }
 
+        public modifyProductForm(Product product)
+        {
+            InitializeComponent();
+            modifyProductIDTextBox.Text = product.ProductID.ToString();
+            modifyProductNameTextBox.Text = product.Name.ToString();
+            modifyProductStockTextBox.Text = product.InStock.ToString();
+            modifyProductPriceTextBox.Text = product.Price.ToString();
+            modifyProductMaxTextBox.Text = product.Max.ToString();
+            modifyProductMinTextBox.Text = product.Min.ToString();
+        }
+
         private void ModifyProduct_Load(object sender, EventArgs e)
         {
 

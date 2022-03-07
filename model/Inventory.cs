@@ -18,13 +18,17 @@ namespace Inventory_Management_System
             AllParts = allParts;
         } 
             
-        public BindingList<Product> Products { get; set; }
+        public static BindingList<Product> Products { get; set; }
         public static BindingList<Part> AllParts { get; set; }
 
 
         public static void addPart(Part part)
         {
             AllParts.Add(part);           
+        }
+        public static void addProduct(Product product)
+        {
+            Products.Add(product);
         }
         public void updatePart(int partID, Part part)
         {
@@ -45,10 +49,6 @@ namespace Inventory_Management_System
 
         }
         public void lookupPart(Part part)
-        {
-
-        }
-        public void addProduct(Product product)
         {
 
         }

@@ -32,12 +32,12 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.modifyProductSearchButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.modifyProductIDTextBox = new System.Windows.Forms.TextBox();
+            this.modifyProductNameTextBox = new System.Windows.Forms.TextBox();
+            this.modifyProductStockTextBox = new System.Windows.Forms.TextBox();
+            this.modifyProductPriceTextBox = new System.Windows.Forms.TextBox();
+            this.modifyProductMaxTextBox = new System.Windows.Forms.TextBox();
+            this.modifyProductMinTextBox = new System.Windows.Forms.TextBox();
             this.modifyProductAddButton = new System.Windows.Forms.Button();
             this.modifyProductDeleteButton = new System.Windows.Forms.Button();
             this.modifyProductSaveButton = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(302, 62);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 102;
             this.dataGridView1.RowTemplate.Height = 40;
@@ -68,7 +68,7 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(302, 247);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 102;
             this.dataGridView2.RowTemplate.Height = 40;
@@ -91,47 +91,47 @@
             this.textBox1.Size = new System.Drawing.Size(143, 20);
             this.textBox1.TabIndex = 12;
             // 
-            // textBox2
+            // modifyProductIDTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(124, 20);
-            this.textBox2.TabIndex = 13;
+            this.modifyProductIDTextBox.Location = new System.Drawing.Point(80, 62);
+            this.modifyProductIDTextBox.Name = "modifyProductIDTextBox";
+            this.modifyProductIDTextBox.Size = new System.Drawing.Size(124, 20);
+            this.modifyProductIDTextBox.TabIndex = 13;
             // 
-            // textBox3
+            // modifyProductNameTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 114);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(124, 20);
-            this.textBox3.TabIndex = 14;
+            this.modifyProductNameTextBox.Location = new System.Drawing.Point(80, 114);
+            this.modifyProductNameTextBox.Name = "modifyProductNameTextBox";
+            this.modifyProductNameTextBox.Size = new System.Drawing.Size(124, 20);
+            this.modifyProductNameTextBox.TabIndex = 14;
             // 
-            // textBox4
+            // modifyProductStockTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(80, 161);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(124, 20);
-            this.textBox4.TabIndex = 15;
+            this.modifyProductStockTextBox.Location = new System.Drawing.Point(80, 161);
+            this.modifyProductStockTextBox.Name = "modifyProductStockTextBox";
+            this.modifyProductStockTextBox.Size = new System.Drawing.Size(124, 20);
+            this.modifyProductStockTextBox.TabIndex = 15;
             // 
-            // textBox5
+            // modifyProductPriceTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(80, 213);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 20);
-            this.textBox5.TabIndex = 16;
+            this.modifyProductPriceTextBox.Location = new System.Drawing.Point(80, 213);
+            this.modifyProductPriceTextBox.Name = "modifyProductPriceTextBox";
+            this.modifyProductPriceTextBox.Size = new System.Drawing.Size(124, 20);
+            this.modifyProductPriceTextBox.TabIndex = 16;
             // 
-            // textBox6
+            // modifyProductMaxTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(80, 263);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(74, 20);
-            this.textBox6.TabIndex = 17;
+            this.modifyProductMaxTextBox.Location = new System.Drawing.Point(80, 263);
+            this.modifyProductMaxTextBox.Name = "modifyProductMaxTextBox";
+            this.modifyProductMaxTextBox.Size = new System.Drawing.Size(74, 20);
+            this.modifyProductMaxTextBox.TabIndex = 17;
             // 
-            // textBox7
+            // modifyProductMinTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(199, 263);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(67, 20);
-            this.textBox7.TabIndex = 18;
+            this.modifyProductMinTextBox.Location = new System.Drawing.Point(199, 263);
+            this.modifyProductMinTextBox.Name = "modifyProductMinTextBox";
+            this.modifyProductMinTextBox.Size = new System.Drawing.Size(67, 20);
+            this.modifyProductMinTextBox.TabIndex = 18;
             // 
             // modifyProductAddButton
             // 
@@ -249,17 +249,17 @@
             this.Controls.Add(this.modifyProductSaveButton);
             this.Controls.Add(this.modifyProductDeleteButton);
             this.Controls.Add(this.modifyProductAddButton);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.modifyProductMinTextBox);
+            this.Controls.Add(this.modifyProductMaxTextBox);
+            this.Controls.Add(this.modifyProductPriceTextBox);
+            this.Controls.Add(this.modifyProductStockTextBox);
+            this.Controls.Add(this.modifyProductNameTextBox);
+            this.Controls.Add(this.modifyProductIDTextBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.modifyProductSearchButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "modifyProductForm";
             this.Text = "ModifyProduct";
             this.Load += new System.EventHandler(this.ModifyProduct_Load);
@@ -276,12 +276,12 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button modifyProductSearchButton;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox modifyProductIDTextBox;
+        private System.Windows.Forms.TextBox modifyProductNameTextBox;
+        private System.Windows.Forms.TextBox modifyProductStockTextBox;
+        private System.Windows.Forms.TextBox modifyProductPriceTextBox;
+        private System.Windows.Forms.TextBox modifyProductMaxTextBox;
+        private System.Windows.Forms.TextBox modifyProductMinTextBox;
         private System.Windows.Forms.Button modifyProductAddButton;
         private System.Windows.Forms.Button modifyProductDeleteButton;
         private System.Windows.Forms.Button modifyProductSaveButton;

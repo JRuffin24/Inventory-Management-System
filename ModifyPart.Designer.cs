@@ -43,7 +43,7 @@
             this.modifyPartsInventoryLabel = new System.Windows.Forms.Label();
             this.modifyPartsPriceLabel = new System.Windows.Forms.Label();
             this.modifyPartsMaxLabel = new System.Windows.Forms.Label();
-            this.modifyPartsMachineIDLabel = new System.Windows.Forms.Label();
+            this.modifyPartsMorCLabel = new System.Windows.Forms.Label();
             this.modifyPartsMinLabel = new System.Windows.Forms.Label();
             this.modifyPartSaveButton = new System.Windows.Forms.Button();
             this.modifyPartCancelButton = new System.Windows.Forms.Button();
@@ -174,14 +174,14 @@
             this.modifyPartsMaxLabel.TabIndex = 14;
             this.modifyPartsMaxLabel.Text = "Max";
             // 
-            // modifyPartsMachineIDLabel
+            // modifyPartsMorCLabel
             // 
-            this.modifyPartsMachineIDLabel.AutoSize = true;
-            this.modifyPartsMachineIDLabel.Location = new System.Drawing.Point(25, 329);
-            this.modifyPartsMachineIDLabel.Name = "modifyPartsMachineIDLabel";
-            this.modifyPartsMachineIDLabel.Size = new System.Drawing.Size(62, 13);
-            this.modifyPartsMachineIDLabel.TabIndex = 15;
-            this.modifyPartsMachineIDLabel.Text = "Machine ID";
+            this.modifyPartsMorCLabel.AutoSize = true;
+            this.modifyPartsMorCLabel.Location = new System.Drawing.Point(25, 329);
+            this.modifyPartsMorCLabel.Name = "modifyPartsMorCLabel";
+            this.modifyPartsMorCLabel.Size = new System.Drawing.Size(62, 13);
+            this.modifyPartsMorCLabel.TabIndex = 15;
+            this.modifyPartsMorCLabel.Text = "Machine ID";
             // 
             // modifyPartsMinLabel
             // 
@@ -219,7 +219,7 @@
             this.Controls.Add(this.modifyPartCancelButton);
             this.Controls.Add(this.modifyPartSaveButton);
             this.Controls.Add(this.modifyPartsMinLabel);
-            this.Controls.Add(this.modifyPartsMachineIDLabel);
+            this.Controls.Add(this.modifyPartsMorCLabel);
             this.Controls.Add(this.modifyPartsMaxLabel);
             this.Controls.Add(this.modifyPartsPriceLabel);
             this.Controls.Add(this.modifyPartsInventoryLabel);
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Label modifyPartsInventoryLabel;
         private System.Windows.Forms.Label modifyPartsPriceLabel;
         private System.Windows.Forms.Label modifyPartsMaxLabel;
-        private System.Windows.Forms.Label modifyPartsMachineIDLabel;
+        private System.Windows.Forms.Label modifyPartsMorCLabel;
         private System.Windows.Forms.Label modifyPartsMinLabel;
         private System.Windows.Forms.Button modifyPartSaveButton;
         private System.Windows.Forms.Button modifyPartCancelButton;

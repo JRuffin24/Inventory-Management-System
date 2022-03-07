@@ -211,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1692, 914);
+            this.ClientSize = new System.Drawing.Size(865, 480);
             this.Controls.Add(this.mainScreenDataGridProducts);
             this.Controls.Add(this.mainScreenPartsDataGrid);
             this.Controls.Add(this.exitButton);
