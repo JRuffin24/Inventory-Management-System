@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Inventory_Management_System
 {
     public partial class mainForm : Form
     {
+        Inhouse inhouse = new Inhouse();
+        Outsourced outsourced = new Outsourced();
         public mainForm()
         {
             InitializeComponent();
@@ -36,6 +39,11 @@ namespace Inventory_Management_System
             //remove bottom empty row
             mainScreenPartsDataGrid.AllowUserToAddRows = false;
             mainScreenDataGridProducts.AllowUserToAddRows = false;
+        }
+        public mainForm(Part part)
+        {
+            partSearchTextBox.Text = part.PartID.ToString();
+            InitializeComponent();
         }
        
         //clear selection upon data load
@@ -103,6 +111,30 @@ namespace Inventory_Management_System
             {
                 MessageBox.Show("Please select a product.");
             }
+        }
+        //trying to search for a part
+        private void partsSearch_Click(object sender, EventArgs e)
+        {
+            string searchValue = partSearchTextBox.Text;
+            var searchedPart = (Part)mainScreenPartsDataGrid.CurrentRow.DataBoundItem;
+
+            foreach(DataGridViewRow row in mainScreenPartsDataGrid.Rows)
+            {
+                if (searchValue == "")
+                {
+                    break;
+                }
+                else if (Regex.IsMatch(row.Cells[1].Value.ToString(), Regex.Escape(searchValue.ToString()), RegexOptions.IgnoreCase))
+                {
+                   // searchedPart = Inventory.lookupPart(searchedPart.PartID.ToString());
+                }
+            }
+           
+        }
+
+        private void productSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

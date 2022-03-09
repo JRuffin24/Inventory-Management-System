@@ -18,6 +18,8 @@ namespace Inventory_Management_System
         [STAThread]
         static void Main()
         {
+            Inventory.loadSampleData();
+
             Product product = new Product();
             Inventory inventory = new Inventory(products, allParts);
 

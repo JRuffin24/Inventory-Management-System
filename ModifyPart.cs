@@ -12,8 +12,8 @@ namespace Inventory_Management_System
 {
     public partial class modifyPartForm : Form
     {
-        Inhouse inhouse = new Inhouse();
-        Outsourced outSourced = new Outsourced();
+        //Inhouse inhouse = new Inhouse();
+        //Outsourced outSourced = new Outsourced();
 
 
         public modifyPartForm()
@@ -30,7 +30,23 @@ namespace Inventory_Management_System
             modifyPartPriceTextBox.Text = part.Price.ToString();
             modifyPartMaxTextBox.Text = part.Max.ToString();
             modifyPartMinTextBox.Text = part.Min.ToString();
-            //                modifyPartMorCTextBox.Text = Convert.ToInt32(part.MachineID);
+
+            if(part is Inhouse) 
+            {
+                var inhousePart = (Inhouse)part;
+                modifyPartsMorCLabel.Text = "Machine ID";
+                modifyPartInHouseRadioButton.Checked = true;
+                modifyPartMorCTextBox.Text = inhousePart.MachineID.ToString();
+            }
+            else
+            {
+                var outsourcedPart = (Outsourced)part;
+                modifyPartsMorCLabel.Text = "Company ID";
+                modifyPartInHouseRadioButton.Checked = true;
+                modifyPartMorCTextBox.Text = outsourcedPart.CompanyID.ToString();
+
+            }
+            
 
         }
 
@@ -42,34 +58,38 @@ namespace Inventory_Management_System
         private void modifyPartSaveButton_Click(object sender, EventArgs e)
         {
 
+            int PartID = 1;
+
             if (modifyPartInHouseRadioButton.Checked)
             {
-                var inHouseNewPart = new Inhouse
+                var inHouseModifyPart = new Inhouse
                 {
-                    PartID = Convert.ToInt32(modifyPartIDTextBox.Text),
+                    PartID = int.Parse(modifyPartIDTextBox.Text),
                     Name = modifyPartNameTextBox.Text,
-                    Price = Convert.ToDecimal(modifyPartPriceTextBox.Text),
-                    InStock = Convert.ToInt32(modifyPartInventoryTextBox.Text),
-                    Min = Convert.ToInt32(modifyPartMinTextBox.Text),
-                    Max = Convert.ToInt32(modifyPartMaxTextBox.Text),
-                    MachineID = Convert.ToInt32(modifyPartMorCTextBox.Text)
+                    Price = Decimal.Parse(modifyPartPriceTextBox.Text),
+                    InStock = int.Parse(modifyPartInventoryTextBox.Text),
+                    Min = int.Parse(modifyPartMinTextBox.Text),
+                    Max = int.Parse(modifyPartMaxTextBox.Text),
+                    MachineID = int.Parse(modifyPartMorCTextBox.Text)
+                    
                 };
-                //Inventory.addPart(inHouseNewPart);
+                Inventory.updatePart(PartID,inHouseModifyPart);
+                
             }
             else if (modifyPartOutsourcedRadioButton.Checked)
             {
 
-                var outsourcedNewPart = new Outsourced
+                var outsourcedModifyPart = new Outsourced
                 {
-                    PartID = Convert.ToInt32(modifyPartIDTextBox.Text),
+                    PartID = int.Parse(modifyPartIDTextBox.Text),
                     Name = modifyPartNameTextBox.Text,
-                    Price = Convert.ToDecimal(modifyPartPriceTextBox.Text),
-                    InStock = Convert.ToInt32(modifyPartInventoryTextBox.Text),
-                    Min = Convert.ToInt32(modifyPartMinTextBox.Text),
-                    Max = Convert.ToInt32(modifyPartMaxTextBox.Text),
-                    CompanyID = Convert.ToInt32(modifyPartMorCTextBox.Text)
-                };
-                //Inventory.addPart(outsourcedNewPart);
+                    Price = Decimal.Parse(modifyPartPriceTextBox.Text),
+                    InStock = int.Parse(modifyPartInventoryTextBox.Text),
+                    Min = int.Parse(modifyPartMinTextBox.Text),
+                    Max = int.Parse(modifyPartMaxTextBox.Text),
+                    CompanyID = int.Parse(modifyPartMorCTextBox.Text)
+                }; 
+                Inventory.updatePart(PartID,outsourcedModifyPart);
             }
 
             Close();
@@ -86,6 +106,7 @@ namespace Inventory_Management_System
             modifyPartsMorCLabel.Text = "Machine";
 
         }
+
     }
 
 }

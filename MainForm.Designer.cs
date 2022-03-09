@@ -37,7 +37,7 @@
             this.modifyProduct = new System.Windows.Forms.Button();
             this.deleteProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.partSearchTextBox = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@
             this.partsSearch.TabIndex = 0;
             this.partsSearch.Text = "Search";
             this.partsSearch.UseVisualStyleBackColor = true;
+            this.partsSearch.Click += new System.EventHandler(this.partsSearch_Click);
             // 
             // productSearch
             // 
@@ -67,6 +68,7 @@
             this.productSearch.TabIndex = 1;
             this.productSearch.Text = "Search";
             this.productSearch.UseVisualStyleBackColor = true;
+            this.productSearch.Click += new System.EventHandler(this.productSearch_Click);
             // 
             // addParts
             // 
@@ -143,13 +145,13 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Inventory Management System";
             // 
-            // textBox1
+            // partSearchTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(240, 63);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 9;
+            this.partSearchTextBox.Location = new System.Drawing.Point(240, 63);
+            this.partSearchTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.partSearchTextBox.Name = "partSearchTextBox";
+            this.partSearchTextBox.Size = new System.Drawing.Size(140, 20);
+            this.partSearchTextBox.TabIndex = 9;
             // 
             // textBox2
             // 
@@ -218,7 +220,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.partSearchTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteProduct);
             this.Controls.Add(this.modifyProduct);
@@ -249,7 +251,7 @@
         private System.Windows.Forms.Button modifyProduct;
         private System.Windows.Forms.Button deleteProduct;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox partSearchTextBox;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

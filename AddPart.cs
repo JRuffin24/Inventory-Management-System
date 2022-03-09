@@ -58,9 +58,7 @@ namespace Inventory_Management_System
         }
 
         private void addPartSaveButton_Click(object sender, EventArgs e)
-        {
-            
-
+        { 
             if (addPartInHouse.Checked)
             {
                 var inHouseNewPart = new Inhouse
@@ -86,7 +84,7 @@ namespace Inventory_Management_System
                     InStock = Convert.ToInt32(addPartInventoryTextBox.Text),
                     Min = Convert.ToInt32(addPartMinTextBox.Text),
                     Max = Convert.ToInt32(addPartMaxTextBox.Text),
-                    CompanyName = addPartMorCTextBox.Text
+                    CompanyID = Convert.ToInt32(addPartMorCTextBox.Text)
                 };
                 Inventory.addPart(outsourcedNewPart);
             }

@@ -139,11 +139,11 @@
             // addPartMorCLabel
             // 
             this.addPartMorCLabel.AutoSize = true;
-            this.addPartMorCLabel.Location = new System.Drawing.Point(104, 241);
+            this.addPartMorCLabel.Location = new System.Drawing.Point(93, 241);
             this.addPartMorCLabel.Name = "addPartMorCLabel";
-            this.addPartMorCLabel.Size = new System.Drawing.Size(48, 13);
+            this.addPartMorCLabel.Size = new System.Drawing.Size(62, 13);
             this.addPartMorCLabel.TabIndex = 9;
-            this.addPartMorCLabel.Text = "Machine";
+            this.addPartMorCLabel.Text = "Machine ID";
             // 
             // addPartSaveButton
             // 
