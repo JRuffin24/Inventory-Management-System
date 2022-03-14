@@ -24,65 +24,42 @@ namespace Inventory_Management_System
 
         public static void loadSampleData()
         {
-        //    Product product = new Product();
-        //    Inventory inventory = new Inventory(Products, AllParts);
+            
 
-        //    Inhouse part1 = new Inhouse();
-        //    part1.Name = "nuts";
-        //    part1.PartID = 1;
-        //    part1.InStock = 3;
-        //    part1.Price = 3.75m;
-        //    part1.Max = 3;
-        //    part1.Min = 0;
-        //    part1.MachineID = 2;
-        //    AllParts.Add(part1);
+            //Product product1 = new Product();
+            //product1.Name = "Bike";
+            //product1.ProductID = 1;
+            //product1.Price = 20.00m;
+            //product1.Max = 3;
+            //product1.Min = 0;
+            //product1.InStock = 20;
+            //Products.Add(product1);
 
-        //    Inhouse part2 = new Inhouse();
-        //    part2.Name = "bolts";
-        //    part2.PartID = 2;
-        //    part2.InStock = 33;
-        //    part2.Price = 0.75m;
-        //    part2.Max = 23;
-        //    part2.Min = 3;
-        //    part2.MachineID = 3;
-        //    AllParts.Add(part2);
+            //Product product2 = new Product();
+            //product2.Name = "Tricycle";
+            //product2.ProductID = 2;
+            //product2.Price = 30.00m;
+            //product2.Max = 4;
+            //product2.Min = 1;
+            //product2.InStock = 30;
+            //Products.Add(product2);
 
-        //    Outsourced outsourcedPart = new Outsourced();
-        //    outsourcedPart.Name = "screws";
-        //    outsourcedPart.PartID = 3;
-        //    outsourcedPart.Price = 1.05m;
-        //    outsourcedPart.InStock = 40;
-        //    outsourcedPart.Max = 10;
-        //    outsourcedPart.Min = 2;
-        //    outsourcedPart.CompanyID = 101;
-        //    AllParts.Add(outsourcedPart);
+            
 
-        //    Outsourced outsourcedPart2 = new Outsourced();
-        //    outsourcedPart2.Name = "washers";
-        //    outsourcedPart2.PartID = 4;
-        //    outsourcedPart2.Price = 1.05m;
-        //    outsourcedPart2.InStock = 100;
-        //    outsourcedPart2.Max = 10;
-        //    outsourcedPart2.Min = 2;
-        //    outsourcedPart2.CompanyID = 231;
-        //    AllParts.Add(outsourcedPart2);
+            //Inhouse part1 = new Inhouse(1,"nuts", 3.75m, 3, 0, 3, 1);
+            //Inhouse part2 = new Inhouse(2, "bolts", 0.75m, 32, 3, 23, 2);
+            //Outsourced part3 = new Outsourced(3, "screws", 1.05m, 40, 2, 10, 101);
+            //Outsourced part4 = new Outsourced(4, "washers", 1.15m, 100, 2, 10, 231);
 
-        //    product.Name = "Bike";
-        //    product.ProductID = 1;
-        //    product.Price = 20.00m;
-        //    product.Max = 3;
-        //    product.Min = 0;
-        //    product.InStock = 20;
-        //    Products.Add(product);
+            
+            
+            //AllParts.Add(part1);
+            //AllParts.Add(part2);
+            //AllParts.Add(part3);
+            //AllParts.Add(part4);
 
-        //    Product product2 = new Product();
-        //    product2.Name = "Tricycle";
-        //    product2.ProductID = 2;
-        //    product2.Price = 30.00m;
-        //    product2.Max = 4;
-        //    product2.Min = 1;
-        //    product2.InStock = 30;
-        //    Products.Add(product2);
+
+
         }
 
         public static void addPart(Part part)
@@ -99,37 +76,60 @@ namespace Inventory_Management_System
             {
                 if (AllParts[i].PartID == partID)
                 {
-
                     AllParts[i] = part;
-                    
-                    //if(item.Name != part.Name)
-                    //{
-                    //    item.Name = part.Name;
-                    //}
 
                 }
+                
             }
         }
         public void deletePart(Part part)
         {
 
         }
-        public void lookupPart(Part part)
+        public static Part lookupPart(int partID)
         {
-            //Part part1 = AllParts.SingleOrDefault(p => p.PartID == partSearchTextBox.Text);
+            foreach(Part part in AllParts)
+            {
+                if (part.PartID == partID)
+                {
+                    return part;
+                }
+
+            }
+            Part emptyPart = new Inhouse();
+            return emptyPart;
+           
         }
         public void deleteProduct(int productID)
         {
 
         }
-        public void lookupProduct(int productID)
+        public static Product lookupProduct(int productID)
         {
+            foreach (Product product in Products)
+            {
+                if (product.ProductID == productID)
+                {
+                    return product;
+                }
 
+            }
+            Product emptyProduct = new Product();
+            return emptyProduct;
         }
 
-        public void updateProduct(int productID, Product product)
+        public static void updateProduct(int productID, Product product)
         {
 
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (Products[i].ProductID == productID)
+                {
+                    Products[i] = product;
+
+                }
+
+            }
         }
     }
 }

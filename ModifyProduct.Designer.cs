@@ -159,6 +159,7 @@
             this.modifyProductSaveButton.TabIndex = 21;
             this.modifyProductSaveButton.Text = "Save";
             this.modifyProductSaveButton.UseVisualStyleBackColor = true;
+            this.modifyProductSaveButton.Click += new System.EventHandler(this.modifyProductSaveButton_Click);
             // 
             // modifyProductCancelButton
             // 
@@ -262,7 +263,6 @@
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "modifyProductForm";
             this.Text = "ModifyProduct";
-            this.Load += new System.EventHandler(this.ModifyProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

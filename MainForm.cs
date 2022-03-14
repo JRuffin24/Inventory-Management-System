@@ -39,15 +39,19 @@ namespace Inventory_Management_System
             //remove bottom empty row
             mainScreenPartsDataGrid.AllowUserToAddRows = false;
             mainScreenDataGridProducts.AllowUserToAddRows = false;
+
+            //removing first column
+            mainScreenPartsDataGrid.RowHeadersVisible = false;
+            mainScreenDataGridProducts.RowHeadersVisible = false;
         }
         public mainForm(Part part)
         {
             partSearchTextBox.Text = part.PartID.ToString();
             InitializeComponent();
         }
-       
+
         //clear selection upon data load
-         private void bindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void bindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             mainScreenPartsDataGrid.ClearSelection();
             mainScreenDataGridProducts.ClearSelection();
@@ -62,18 +66,18 @@ namespace Inventory_Management_System
         {
             addPartForm addForm = new addPartForm();
             addForm.ShowDialog();
-            
+
         }
-       
+
         private void modifyParts_Click(object sender, EventArgs e)
         {
             if (mainScreenPartsDataGrid.SelectedRows.Count > 0)
             {
-                 var selectedPart = (Part)mainScreenPartsDataGrid.CurrentRow.DataBoundItem;
+                var selectedPart = (Part)mainScreenPartsDataGrid.CurrentRow.DataBoundItem;
 
-                 modifyPartForm modifyForm = new modifyPartForm(selectedPart);
+                modifyPartForm modifyForm = new modifyPartForm(selectedPart);
 
-                 modifyForm.ShowDialog();
+                modifyForm.ShowDialog();
 
             }
             else
@@ -91,20 +95,20 @@ namespace Inventory_Management_System
 
         private void addProducts_Click(object sender, EventArgs e)
         {
-                addProductForm addProduct = new addProductForm();
-                addProduct.ShowDialog();
-            
-            
+            addProductForm addProduct = new addProductForm();
+            addProduct.ShowDialog();
+
+
         }
 
         private void modifyProduct_Click(object sender, EventArgs e)
         {
-            if(mainScreenDataGridProducts.SelectedRows.Count > 0)
+            if (mainScreenDataGridProducts.SelectedRows.Count > 0)
             {
                 var selectedProduct = (Product)mainScreenDataGridProducts.CurrentRow.DataBoundItem;
-                
+
                 modifyProductForm modifyProduct = new modifyProductForm(selectedProduct);
-                
+
                 modifyProduct.ShowDialog();
             }
             else
@@ -112,29 +116,64 @@ namespace Inventory_Management_System
                 MessageBox.Show("Please select a product.");
             }
         }
+       
         //trying to search for a part
         private void partsSearch_Click(object sender, EventArgs e)
         {
-            string searchValue = partSearchTextBox.Text;
-            var searchedPart = (Part)mainScreenPartsDataGrid.CurrentRow.DataBoundItem;
+            int searchValue = int.Parse(partSearchTextBox.Text);
 
-            foreach(DataGridViewRow row in mainScreenPartsDataGrid.Rows)
+            if (searchValue < 1) return;
+            Part matchedPart = Inventory.lookupPart(int.Parse(partSearchTextBox.Text));
+
+            foreach (DataGridViewRow row in mainScreenPartsDataGrid.Rows)
             {
-                if (searchValue == "")
+
+                Part part = (Part)row.DataBoundItem;
+                if (part.PartID == matchedPart.PartID)
                 {
+                    row.Selected = true;
                     break;
                 }
-                else if (Regex.IsMatch(row.Cells[1].Value.ToString(), Regex.Escape(searchValue.ToString()), RegexOptions.IgnoreCase))
+                else
                 {
-                   // searchedPart = Inventory.lookupPart(searchedPart.PartID.ToString());
+                    row.Selected = false;
                 }
+
             }
-           
+
         }
 
         private void productSearch_Click(object sender, EventArgs e)
         {
 
+            int searchValue = int.Parse(productsSearchTextBox.Text);
+            if (searchValue < 1) return;
+
+            Product matchedProduct = Inventory.lookupProduct(int.Parse(productsSearchTextBox.Text));
+
+            foreach (DataGridViewRow row in mainScreenDataGridProducts.Rows)
+            {
+
+                Product product = (Product)row.DataBoundItem;
+                if (product.ProductID == matchedProduct.ProductID)
+                {
+                    row.Selected = true;
+                    break;
+                }
+                else
+                {
+                    row.Selected = false;
+                }
+
+            }
+
         }
+
+
     }
 }
+
+
+
+        
+

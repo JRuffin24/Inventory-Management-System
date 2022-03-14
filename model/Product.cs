@@ -28,8 +28,9 @@ namespace Inventory_Management_System
         public int InStock { get; set;}
         public int Min { get; set; }
         public int Max { get; set; }
-        public BindingList<Part> AssociatedParts { get; set; }
-
+        public static BindingList<Part> AssociatedParts { get; set; }
+        public static int CurrentIndexUpper { get; set; }
+        public static int CurrentIndexLower { get; set; }
 
       
         public void addAssociatedPart()

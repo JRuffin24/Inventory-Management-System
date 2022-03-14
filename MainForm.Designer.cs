@@ -38,7 +38,7 @@
             this.deleteProduct = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.partSearchTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.productsSearchTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
@@ -153,13 +153,13 @@
             this.partSearchTextBox.Size = new System.Drawing.Size(140, 20);
             this.partSearchTextBox.TabIndex = 9;
             // 
-            // textBox2
+            // productsSearchTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(670, 63);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
-            this.textBox2.TabIndex = 10;
+            this.productsSearchTextBox.Location = new System.Drawing.Point(670, 63);
+            this.productsSearchTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.productsSearchTextBox.Name = "productsSearchTextBox";
+            this.productsSearchTextBox.Size = new System.Drawing.Size(136, 20);
+            this.productsSearchTextBox.TabIndex = 10;
             // 
             // label2
             // 
@@ -219,7 +219,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.productsSearchTextBox);
             this.Controls.Add(this.partSearchTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.deleteProduct);
@@ -252,7 +252,7 @@
         private System.Windows.Forms.Button deleteProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox partSearchTextBox;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox productsSearchTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button exitButton;

@@ -50,7 +50,7 @@ namespace Inventory_Management_System
             outsourcedPart.InStock = 40;
             outsourcedPart.Max = 10;
             outsourcedPart.Min = 2;
-            outsourcedPart.CompanyID = 101;
+            outsourcedPart.CompanyID = 4;
             allParts.Add(outsourcedPart);
 
             Outsourced outsourcedPart2 = new Outsourced();
@@ -60,7 +60,7 @@ namespace Inventory_Management_System
             outsourcedPart2.InStock = 100;
             outsourcedPart2.Max = 10;
             outsourcedPart2.Min = 2;
-            outsourcedPart2.CompanyID = 231;
+            outsourcedPart2.CompanyID = 6;
             allParts.Add(outsourcedPart2);
 
             product.Name = "Bike";

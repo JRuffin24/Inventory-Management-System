@@ -21,6 +21,6 @@ namespace Inventory_Management_System
             Max = max;
             MachineID = machineID;
         }
-      
+
     }
 }
