@@ -33,13 +33,26 @@ namespace Inventory_Management_System
         public static int CurrentIndexLower { get; set; }
 
       
-        public void addAssociatedPart()
+        public static void addAssociatedPart(Part part)
         {
-
+            AssociatedParts.Add(part);
         }
-        public bool removeAssociatedPart()
+        public bool removeAssociatedPart(int partID)
         {
-            return true;
+            bool success = false;
+            foreach (Part part in AssociatedParts)
+            {
+                if (part.PartID == partID)
+                {
+                    AssociatedParts.Remove(part);
+                    return success = true;
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
         public int lookupAssociatedPart()
         {

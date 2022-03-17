@@ -90,7 +90,18 @@ namespace Inventory_Management_System
 
         private void deletePart_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this part? This action cannot be undone once completed.", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in mainScreenPartsDataGrid.SelectedRows)
+                {
+                    mainScreenPartsDataGrid.Rows.RemoveAt(row.Index);
+                }
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void addProducts_Click(object sender, EventArgs e)
