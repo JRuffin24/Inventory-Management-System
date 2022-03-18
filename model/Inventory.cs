@@ -79,12 +79,24 @@ namespace Inventory_Management_System
                     AllParts[i] = part;
 
                 }
-                
-            }
-        }
-        public void deletePart(Part part)
-        {
 
+            }
+
+            //deletePart(partID);
+            //addPart(part);
+        }
+        public static bool deletePart(int part)
+        {
+            Part partToDelete = lookupPart(part);
+            if(partToDelete == null)
+            {
+                return false;
+            }
+            else
+            {
+                AllParts.Remove(partToDelete);
+                return true;
+            }
         }
         public static Part lookupPart(int partID)
         {
@@ -100,9 +112,23 @@ namespace Inventory_Management_System
             return emptyPart;
            
         }
-        public void deleteProduct(int productID)
+        public static bool removeProduct(int productID)
         {
-
+            bool successfulRemove = false;
+            foreach(Product product in Products)
+            {
+                if(productID == product.ProductID)
+                {
+                    Products.Remove(product);
+                    return successfulRemove = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error: Removal unsuccessful.");
+                    return successfulRemove = false;
+                }
+            }
+            return successfulRemove;
         }
         public static Product lookupProduct(int productID)
         {

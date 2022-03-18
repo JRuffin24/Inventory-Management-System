@@ -11,7 +11,7 @@ namespace Inventory_Management_System
     {
         public Product() { }
 
-        public Product(BindingList<Part> associatedParts,int productID, string name, Decimal price, int stock, int min, int max)
+        public Product(BindingList<Part> associatedParts, int productID, string name, Decimal price, int stock, int min, int max)
         {
             AssociatedParts = associatedParts;
 
@@ -54,9 +54,17 @@ namespace Inventory_Management_System
             }
             return success;
         }
-        public int lookupAssociatedPart()
+        public Part lookupAssociatedPart(int partID)
         {
-            return ProductID;
+            foreach(Part part in AssociatedParts)
+            {
+                if(part.PartID == partID)
+                {
+                    return part;
+                }
+            }
+            Inhouse emptyInHousePart = new Inhouse();
+            return emptyInHousePart;
         }
     }
 }

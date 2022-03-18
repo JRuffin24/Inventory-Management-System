@@ -38,7 +38,7 @@ namespace Inventory_Management_System
             associatedPartsOfProductGrid.RowHeadersVisible = false;
             autoGenerateID();
         }
-
+        
         public void autoGenerateID()
         {
             string num = "123456789";

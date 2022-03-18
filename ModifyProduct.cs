@@ -38,17 +38,26 @@ namespace Inventory_Management_System
         }
 
         private void modifyProductSaveButton_Click(object sender, EventArgs e)
-        {            
-            int ProductID = 1;
+        {
+            // int ProductID = 1;
+
+            var modProductID = int.Parse(modifyProductIDTextBox.Text);
+            var modProductName = modifyProductNameTextBox.Text;
+            var modProductInStock = int.Parse(modifyProductStockTextBox.Text);
+            var modProductMin = int.Parse(modifyProductMinTextBox.Text);
+            var modProductMax = int.Parse(modifyProductMaxTextBox.Text);
+            var modProductPrice = decimal.Parse(modifyProductPriceTextBox.Text);
+
             var modifiedProduct = new Product
             {
-                ProductID = int.Parse(modifyProductIDTextBox.Text),
-                Name = modifyProductNameTextBox.Text,
-                InStock = int.Parse(modifyProductStockTextBox.Text),
-                Min = int.Parse(modifyProductMinTextBox.Text),
-                Max = int.Parse(modifyProductMaxTextBox.Text)
+                ProductID = modProductID,
+                Name = modProductName,
+                Price = modProductPrice,
+                InStock = modProductInStock ,
+                Min = modProductMin,
+                Max = modProductMax
             };
-            Inventory.updateProduct(ProductID, modifiedProduct);
+            Inventory.updateProduct(modProductID, modifiedProduct);
             Close();
         }
     }

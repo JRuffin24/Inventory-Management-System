@@ -42,7 +42,7 @@ namespace Inventory_Management_System
             {
                 var outsourcedPart = (Outsourced)part;
                 modifyPartsMorCLabel.Text = "Company ID";
-                modifyPartInHouseRadioButton.Checked = true;
+                modifyPartOutsourcedRadioButton.Checked = true;
                 modifyPartMorCTextBox.Text = outsourcedPart.CompanyID.ToString();
 
             }
@@ -58,38 +58,49 @@ namespace Inventory_Management_System
         private void modifyPartSaveButton_Click(object sender, EventArgs e)
         {
 
-            int PartID = 1;
+            //int PartID = 1;
+
+            var modPartID = int.Parse(modifyPartIDTextBox.Text);
+            var modName = modifyPartNameTextBox.Text;
+            var modPrice = Decimal.Parse(modifyPartPriceTextBox.Text);
+            var modInStock = int.Parse(modifyPartInventoryTextBox.Text);
+            var modMin = int.Parse(modifyPartMinTextBox.Text);
+            var modMax = int.Parse(modifyPartMaxTextBox.Text);
+            
+            
 
             if (modifyPartInHouseRadioButton.Checked)
             {
+
+                var modMachineID = int.Parse(modifyPartMorCTextBox.Text);
                 var inHouseModifyPart = new Inhouse
                 {
-                    PartID = int.Parse(modifyPartIDTextBox.Text),
-                    Name = modifyPartNameTextBox.Text,
-                    Price = Decimal.Parse(modifyPartPriceTextBox.Text),
-                    InStock = int.Parse(modifyPartInventoryTextBox.Text),
-                    Min = int.Parse(modifyPartMinTextBox.Text),
-                    Max = int.Parse(modifyPartMaxTextBox.Text),
-                    MachineID = int.Parse(modifyPartMorCTextBox.Text)
+                    PartID = modPartID,
+                    Name = modName,
+                    Price = modPrice,
+                    InStock = modInStock,
+                    Min = modMin,
+                    Max = modMax,
+                    MachineID = modMachineID
                     
                 };
-                Inventory.updatePart(PartID,inHouseModifyPart);
+                Inventory.updatePart(modPartID,inHouseModifyPart);
                 
             }
             else if (modifyPartOutsourcedRadioButton.Checked)
             {
-
+                var modCompanyID = int.Parse(modifyPartMorCTextBox.Text);
                 var outsourcedModifyPart = new Outsourced
                 {
-                    PartID = int.Parse(modifyPartIDTextBox.Text),
-                    Name = modifyPartNameTextBox.Text,
-                    Price = Decimal.Parse(modifyPartPriceTextBox.Text),
-                    InStock = int.Parse(modifyPartInventoryTextBox.Text),
-                    Min = int.Parse(modifyPartMinTextBox.Text),
-                    Max = int.Parse(modifyPartMaxTextBox.Text),
-                    CompanyID = int.Parse(modifyPartMorCTextBox.Text)
+                    PartID = modPartID,
+                    Name = modName,
+                    Price = modPrice,
+                    InStock = modInStock,
+                    Min = modMin,
+                    Max = modMax,
+                    CompanyID = modCompanyID
                 }; 
-                Inventory.updatePart(PartID,outsourcedModifyPart);
+                Inventory.updatePart(modPartID,outsourcedModifyPart);
             }
 
             Close();
