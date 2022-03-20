@@ -11,9 +11,9 @@ namespace Inventory_Management_System
     {
         public Product() { }
 
-        public Product(BindingList<Part> associatedParts, int productID, string name, Decimal price, int stock, int min, int max)
+        public Product(int productID, string name, Decimal price, int stock, int min, int max)
         {
-            AssociatedParts = associatedParts;
+            //AssociatedParts = associatedParts;
 
             ProductID = productID;
             Name = name;
@@ -28,12 +28,12 @@ namespace Inventory_Management_System
         public int InStock { get; set;}
         public int Min { get; set; }
         public int Max { get; set; }
-        public static BindingList<Part> AssociatedParts { get; set; }
+        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
         public static int CurrentIndexUpper { get; set; }
         public static int CurrentIndexLower { get; set; }
 
       
-        public static void addAssociatedPart(Part part)
+        public void addAssociatedPart(Part part)
         {
             AssociatedParts.Add(part);
         }

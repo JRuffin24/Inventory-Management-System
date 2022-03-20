@@ -81,9 +81,7 @@ namespace Inventory_Management_System
                 }
 
             }
-
-            //deletePart(partID);
-            //addPart(part);
+            
         }
         public static bool deletePart(int part)
         {

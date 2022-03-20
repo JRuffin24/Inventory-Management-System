@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.modProductAvailableParts = new System.Windows.Forms.DataGridView();
+            this.modProductsAssociatedParts = new System.Windows.Forms.DataGridView();
             this.modifyProductSearchButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.modProductSearchBox = new System.Windows.Forms.TextBox();
             this.modifyProductIDTextBox = new System.Windows.Forms.TextBox();
             this.modifyProductNameTextBox = new System.Windows.Forms.TextBox();
             this.modifyProductStockTextBox = new System.Windows.Forms.TextBox();
@@ -49,31 +49,31 @@
             this.modifyProductPriceLabel = new System.Windows.Forms.Label();
             this.modifyProductMaxPriceLabel = new System.Windows.Forms.Label();
             this.modifyProductMinPriceLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modProductAvailableParts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modProductsAssociatedParts)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // modProductAvailableParts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(302, 62);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 102;
-            this.dataGridView1.RowTemplate.Height = 40;
-            this.dataGridView1.Size = new System.Drawing.Size(252, 122);
-            this.dataGridView1.TabIndex = 0;
+            this.modProductAvailableParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.modProductAvailableParts.Location = new System.Drawing.Point(302, 62);
+            this.modProductAvailableParts.Margin = new System.Windows.Forms.Padding(1);
+            this.modProductAvailableParts.Name = "modProductAvailableParts";
+            this.modProductAvailableParts.RowHeadersWidth = 102;
+            this.modProductAvailableParts.RowTemplate.Height = 40;
+            this.modProductAvailableParts.Size = new System.Drawing.Size(466, 122);
+            this.modProductAvailableParts.TabIndex = 0;
             // 
-            // dataGridView2
+            // modProductsAssociatedParts
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(302, 247);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(1);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 102;
-            this.dataGridView2.RowTemplate.Height = 40;
-            this.dataGridView2.Size = new System.Drawing.Size(252, 115);
-            this.dataGridView2.TabIndex = 1;
+            this.modProductsAssociatedParts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.modProductsAssociatedParts.Location = new System.Drawing.Point(302, 247);
+            this.modProductsAssociatedParts.Margin = new System.Windows.Forms.Padding(1);
+            this.modProductsAssociatedParts.Name = "modProductsAssociatedParts";
+            this.modProductsAssociatedParts.RowHeadersWidth = 102;
+            this.modProductsAssociatedParts.RowTemplate.Height = 40;
+            this.modProductsAssociatedParts.Size = new System.Drawing.Size(466, 115);
+            this.modProductsAssociatedParts.TabIndex = 1;
             // 
             // modifyProductSearchButton
             // 
@@ -83,13 +83,14 @@
             this.modifyProductSearchButton.TabIndex = 11;
             this.modifyProductSearchButton.Text = "Search";
             this.modifyProductSearchButton.UseVisualStyleBackColor = true;
+            this.modifyProductSearchButton.Click += new System.EventHandler(this.modifyProductSearchButton_Click);
             // 
-            // textBox1
+            // modProductSearchBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(413, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 20);
-            this.textBox1.TabIndex = 12;
+            this.modProductSearchBox.Location = new System.Drawing.Point(413, 23);
+            this.modProductSearchBox.Name = "modProductSearchBox";
+            this.modProductSearchBox.Size = new System.Drawing.Size(143, 20);
+            this.modProductSearchBox.TabIndex = 12;
             // 
             // modifyProductIDTextBox
             // 
@@ -135,21 +136,23 @@
             // 
             // modifyProductAddButton
             // 
-            this.modifyProductAddButton.Location = new System.Drawing.Point(479, 202);
+            this.modifyProductAddButton.Location = new System.Drawing.Point(693, 208);
             this.modifyProductAddButton.Name = "modifyProductAddButton";
             this.modifyProductAddButton.Size = new System.Drawing.Size(75, 23);
             this.modifyProductAddButton.TabIndex = 19;
             this.modifyProductAddButton.Text = "Add";
             this.modifyProductAddButton.UseVisualStyleBackColor = true;
+            this.modifyProductAddButton.Click += new System.EventHandler(this.modifyProductAddButton_Click);
             // 
             // modifyProductDeleteButton
             // 
-            this.modifyProductDeleteButton.Location = new System.Drawing.Point(479, 372);
+            this.modifyProductDeleteButton.Location = new System.Drawing.Point(693, 381);
             this.modifyProductDeleteButton.Name = "modifyProductDeleteButton";
             this.modifyProductDeleteButton.Size = new System.Drawing.Size(75, 23);
             this.modifyProductDeleteButton.TabIndex = 20;
             this.modifyProductDeleteButton.Text = "Delete";
             this.modifyProductDeleteButton.UseVisualStyleBackColor = true;
+            this.modifyProductDeleteButton.Click += new System.EventHandler(this.modifyProductDeleteButton_Click);
             // 
             // modifyProductSaveButton
             // 
@@ -238,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 459);
+            this.ClientSize = new System.Drawing.Size(839, 459);
             this.Controls.Add(this.modifyProductMinPriceLabel);
             this.Controls.Add(this.modifyProductMaxPriceLabel);
             this.Controls.Add(this.modifyProductPriceLabel);
@@ -256,15 +259,15 @@
             this.Controls.Add(this.modifyProductStockTextBox);
             this.Controls.Add(this.modifyProductNameTextBox);
             this.Controls.Add(this.modifyProductIDTextBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.modProductSearchBox);
             this.Controls.Add(this.modifyProductSearchButton);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.modProductsAssociatedParts);
+            this.Controls.Add(this.modProductAvailableParts);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "modifyProductForm";
             this.Text = "ModifyProduct";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modProductAvailableParts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modProductsAssociatedParts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,10 +275,10 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView modProductAvailableParts;
+        private System.Windows.Forms.DataGridView modProductsAssociatedParts;
         private System.Windows.Forms.Button modifyProductSearchButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox modProductSearchBox;
         private System.Windows.Forms.TextBox modifyProductIDTextBox;
         private System.Windows.Forms.TextBox modifyProductNameTextBox;
         private System.Windows.Forms.TextBox modifyProductStockTextBox;
