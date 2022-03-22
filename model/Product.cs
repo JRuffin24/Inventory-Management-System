@@ -11,24 +11,6 @@ namespace Inventory_Management_System
     {
         public Product() { }
 
-        //public Product(int productID, string name, Decimal price, int stock, int min, int max)
-        //{
-        //    //AssociatedParts = associatedParts;
-
-        //    ProductID = productID;
-        //    Name = name;
-        //    Price = price;
-        //    InStock = stock;
-        //    Min = min;
-        //    Max = max;
-        //}
-        //public Product(int productID, string name, Decimal price, int stock, int min, int max, BindingList<Part> associatedParts)
-        //{
-        //    AssociatedParts = associatedParts;
-
-            
-        //}
-
         public int ProductID {get;set;}
         public string Name {get;set;}
         public decimal Price {get; set;}
@@ -52,6 +34,7 @@ namespace Inventory_Management_System
                 if (part.PartID == partID)
                 {
                     AssociatedParts.Remove(part);
+                    
                     return success = true;
                 }
                 else
@@ -71,6 +54,7 @@ namespace Inventory_Management_System
                 }
             }
             Inhouse emptyInHousePart = new Inhouse();
+            
             return emptyInHousePart;
         }
     }

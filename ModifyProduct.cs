@@ -21,43 +21,54 @@ namespace Inventory_Management_System
         public modifyProductForm(Product product)
         {
             InitializeComponent();
+            
             modifyProductIDTextBox.Text = product.ProductID.ToString();
+            
             modifyProductNameTextBox.Text = product.Name.ToString();
+            
             modifyProductStockTextBox.Text = product.InStock.ToString();
+            
             modifyProductPriceTextBox.Text = product.Price.ToString();
+            
             modifyProductMaxTextBox.Text = product.Max.ToString();
+            
             modifyProductMinTextBox.Text = product.Min.ToString();
 
             
-            modProductAvailableParts.DataSource = Inventory.AllParts;
            
-
-            modProductAvailableParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          
-            modProductAvailableParts.ReadOnly = true;            
-            modProductAvailableParts.MultiSelect = false;           
-            modProductAvailableParts.AllowUserToAddRows = false;
-            modProductAvailableParts.RowHeadersVisible = false;            
+            modProductAvailableParts.DataSource = Inventory.AllParts;
             
-            foreach (Part part in Product.AssociatedParts)
+            modProductAvailableParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;          
+            
+            modProductAvailableParts.ReadOnly = true;            
+            
+            modProductAvailableParts.MultiSelect = false;           
+            
+            modProductAvailableParts.AllowUserToAddRows = false;
+            
+            modProductAvailableParts.RowHeadersVisible = false;            
+ 
+        //Load associated Parts for each product into the bottom data grid   
+            
+            foreach (Part part in product.AssociatedParts)
             {
                 addedParts.Add(part);
             }
-
-
             modProductsAssociatedParts.DataSource = addedParts;
+            
             modProductsAssociatedParts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             modProductsAssociatedParts.ReadOnly = true;
+            
             modProductsAssociatedParts.MultiSelect = false;
+            
             modProductsAssociatedParts.AllowUserToAddRows = false;
+            
             modProductsAssociatedParts.RowHeadersVisible = false;
 
             modifyProductIDTextBox.ReadOnly = true;
 
-          
-
         }
-
-   
 
         private void modifyProductCancelButton_Click(object sender, EventArgs e)
         {
@@ -69,33 +80,49 @@ namespace Inventory_Management_System
             if (int.Parse(modifyProductMinTextBox.Text) > int.Parse(modifyProductMaxTextBox.Text))
             {
                 MessageBox.Show("Min cannot be greater then Max");
+                
                 return;
             }
             if (int.Parse(modifyProductStockTextBox.Text) > int.Parse(modifyProductMaxTextBox.Text) || int.Parse(modifyProductStockTextBox.Text) < int.Parse(modifyProductMinTextBox.Text))
             {
                 MessageBox.Show("Inventory must be between max and min Inventory");
+                
                 return;
             }
             try
             {
-
-
                 var modProductID = int.Parse(modifyProductIDTextBox.Text);
+                
                 var modProductName = modifyProductNameTextBox.Text;
+                
                 var modProductInStock = int.Parse(modifyProductStockTextBox.Text);
+                
                 var modProductMin = int.Parse(modifyProductMinTextBox.Text);
+                
                 var modProductMax = int.Parse(modifyProductMaxTextBox.Text);
+                
                 var modProductPrice = decimal.Parse(modifyProductPriceTextBox.Text);
 
                 var modifiedProduct = new Product
                 {
                     ProductID = modProductID,
+                    
                     Name = modProductName,
+                    
                     Price = modProductPrice,
+                    
                     InStock = modProductInStock,
+                    
                     Min = modProductMin,
+                    
                     Max = modProductMax
                 };
+                
+                foreach(Part part in addedParts)
+                {
+                    modifiedProduct.addAssociatedPart(part);
+                }
+                
                 Inventory.updateProduct(modProductID, modifiedProduct);
             }
             catch
@@ -103,12 +130,6 @@ namespace Inventory_Management_System
                 MessageBox.Show("Error: Inventory, Price, Max and Min need to be numeric values");
             }
 
-            Product product = new Product();
-            foreach(Part part in addedParts)
-            {
-                product.addAssociatedPart(part);
-            }
-            
             Close();
 
         }
@@ -119,15 +140,16 @@ namespace Inventory_Management_System
             if (!modProductAvailableParts.CurrentRow.Selected)
             {
                 MessageBox.Show("A part must be selected");
+                
                 return;
             }
             else
             {
                 var partAddedToProduct = (Part)modProductAvailableParts.CurrentRow.DataBoundItem;
+                
                 addedParts.Add(partAddedToProduct);
 
-            }
-       
+            }     
         }
 
         private void modifyProductDeleteButton_Click(object sender, EventArgs e)
@@ -152,15 +174,18 @@ namespace Inventory_Management_System
             int searchValue = int.Parse(modProductSearchBox.Text);
 
             if (searchValue < 1) return;
+            
             Part matchedPart = Inventory.lookupPart(int.Parse(modProductSearchBox.Text));
 
             foreach (DataGridViewRow row in modProductAvailableParts.Rows)
             {
 
                 Part part = (Part)row.DataBoundItem;
+               
                 if (part.PartID == matchedPart.PartID)
                 {
                     row.Selected = true;
+                    
                     break;
                 }
                 else

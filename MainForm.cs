@@ -21,32 +21,39 @@ namespace Inventory_Management_System
 
             //set the data source
             mainScreenPartsDataGrid.DataSource = Inventory.AllParts;
-            mainScreenDataGridProducts.DataSource = Program.products;
+            
+            mainScreenDataGridProducts.DataSource = Inventory.Products;
 
 
             //sets the selection mode to full row instead of individual cell
             mainScreenPartsDataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             mainScreenDataGridProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             //Make grid read only
             mainScreenPartsDataGrid.ReadOnly = true;
+            
             mainScreenDataGridProducts.ReadOnly = true;
 
             //Turn off multiselect
             mainScreenPartsDataGrid.MultiSelect = false;
+            
             mainScreenDataGridProducts.MultiSelect = false;
 
             //remove bottom empty row
             mainScreenPartsDataGrid.AllowUserToAddRows = false;
+            
             mainScreenDataGridProducts.AllowUserToAddRows = false;
 
             //removing first column
             mainScreenPartsDataGrid.RowHeadersVisible = false;
+            
             mainScreenDataGridProducts.RowHeadersVisible = false;
         }
         public mainForm(Part part)
         {
             partSearchTextBox.Text = part.PartID.ToString();
+            
             InitializeComponent();
         }
 
@@ -54,6 +61,7 @@ namespace Inventory_Management_System
         private void bindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             mainScreenPartsDataGrid.ClearSelection();
+            
             mainScreenDataGridProducts.ClearSelection();
         }
 
@@ -65,8 +73,8 @@ namespace Inventory_Management_System
         private void addParts_Click(object sender, EventArgs e)
         {
             addPartForm addForm = new addPartForm();
+            
             addForm.ShowDialog();
-
         }
 
         private void modifyParts_Click(object sender, EventArgs e)
@@ -84,8 +92,6 @@ namespace Inventory_Management_System
             {
                 MessageBox.Show("Please select a part.");
             }
-
-
         }
 
         private void deletePart_Click(object sender, EventArgs e)
@@ -109,7 +115,6 @@ namespace Inventory_Management_System
             addProductForm addProduct = new addProductForm();
             addProduct.ShowDialog();
 
-
         }
 
         private void modifyProduct_Click(object sender, EventArgs e)
@@ -128,7 +133,6 @@ namespace Inventory_Management_System
             }
         }
        
-        //trying to search for a part
         private void partsSearch_Click(object sender, EventArgs e)
         {
             int searchValue = int.Parse(partSearchTextBox.Text);
@@ -180,7 +184,27 @@ namespace Inventory_Management_System
 
         }
 
-
+        private void deleteProduct_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this product? This action cannot be undone once completed.", "Confirmation", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Product product = (Product)mainScreenDataGridProducts.CurrentRow.DataBoundItem;
+                if(product.AssociatedParts.Count > 0)
+                {
+                    MessageBox.Show("Cannot delete product with associated parts. Please remove the attached parts before deletion.");
+                    return;
+                }
+                foreach (DataGridViewRow row in mainScreenDataGridProducts.SelectedRows)
+                {
+                    mainScreenDataGridProducts.Rows.RemoveAt(row.Index);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
 

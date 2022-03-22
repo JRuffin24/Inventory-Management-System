@@ -17,8 +17,7 @@ namespace Inventory_Management_System
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            Inventory.loadSampleData();
+        {           
 
             Product product = new Product();
             Inventory inventory = new Inventory(products, allParts);
@@ -36,7 +35,7 @@ namespace Inventory_Management_System
             Inhouse part2 = new Inhouse();
             part2.Name = "bolts";
             part2.PartID = 2;
-            part2.InStock = 33;
+            part2.InStock = 22;
             part2.Price = 0.75m;
             part2.Max = 23;
             part2.Min = 3;
@@ -47,7 +46,7 @@ namespace Inventory_Management_System
             outsourcedPart.Name = "screws";
             outsourcedPart.PartID = 3;
             outsourcedPart.Price = 1.05m;
-            outsourcedPart.InStock = 40;
+            outsourcedPart.InStock = 9;
             outsourcedPart.Max = 10;
             outsourcedPart.Min = 2;
             outsourcedPart.CompanyID = 4;
@@ -57,7 +56,7 @@ namespace Inventory_Management_System
             outsourcedPart2.Name = "washers";
             outsourcedPart2.PartID = 4;
             outsourcedPart2.Price = 1.05m;
-            outsourcedPart2.InStock = 100;
+            outsourcedPart2.InStock = 8;
             outsourcedPart2.Max = 10;
             outsourcedPart2.Min = 2;
             outsourcedPart2.CompanyID = 6;
@@ -68,7 +67,7 @@ namespace Inventory_Management_System
             product.Price = 20.00m;
             product.Max = 3;
             product.Min = 0;
-            product.InStock = 20;
+            product.InStock = 2;
             products.Add(product);
 
             Product product2 = new Product();
@@ -77,7 +76,7 @@ namespace Inventory_Management_System
             product2.Price = 30.00m;
             product2.Max = 4;
             product2.Min = 1;
-            product2.InStock = 30;
+            product2.InStock = 3;
             products.Add(product2);
 
 

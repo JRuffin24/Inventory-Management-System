@@ -15,6 +15,7 @@ namespace Inventory_Management_System
         public Inventory(BindingList<Product> products, BindingList<Part> allParts)
         {
             Products = products;
+            
             AllParts = allParts;
         }
 
@@ -44,6 +45,7 @@ namespace Inventory_Management_System
         public static bool deletePart(int part)
         {
             Part partToDelete = lookupPart(part);
+           
             if(partToDelete == null)
             {
                 return false;
@@ -51,6 +53,7 @@ namespace Inventory_Management_System
             else
             {
                 AllParts.Remove(partToDelete);
+                
                 return true;
             }
         }
@@ -64,26 +67,33 @@ namespace Inventory_Management_System
                 }
 
             }
+           
             Part emptyPart = new Inhouse();
+            
             return emptyPart;
            
         }
         public static bool removeProduct(int productID)
         {
             bool successfulRemove = false;
+            
             foreach(Product product in Products)
             {
                 if(productID == product.ProductID)
+                
                 {
                     Products.Remove(product);
+                    
                     return successfulRemove = true;
                 }
                 else
                 {
                     MessageBox.Show("Error: Removal unsuccessful.");
+                    
                     return successfulRemove = false;
                 }
             }
+            
             return successfulRemove;
         }
         public static Product lookupProduct(int productID)
@@ -97,6 +107,7 @@ namespace Inventory_Management_System
 
             }
             Product emptyProduct = new Product();
+            
             return emptyProduct;
         }
 
