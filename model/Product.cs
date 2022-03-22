@@ -11,27 +11,34 @@ namespace Inventory_Management_System
     {
         public Product() { }
 
-        public Product(int productID, string name, Decimal price, int stock, int min, int max)
-        {
-            //AssociatedParts = associatedParts;
+        //public Product(int productID, string name, Decimal price, int stock, int min, int max)
+        //{
+        //    //AssociatedParts = associatedParts;
 
-            ProductID = productID;
-            Name = name;
-            Price = price;
-            InStock = stock;
-            Min = min;
-            Max = max;
-        }
+        //    ProductID = productID;
+        //    Name = name;
+        //    Price = price;
+        //    InStock = stock;
+        //    Min = min;
+        //    Max = max;
+        //}
+        //public Product(int productID, string name, Decimal price, int stock, int min, int max, BindingList<Part> associatedParts)
+        //{
+        //    AssociatedParts = associatedParts;
+
+            
+        //}
+
         public int ProductID {get;set;}
         public string Name {get;set;}
         public decimal Price {get; set;}
         public int InStock { get; set;}
         public int Min { get; set; }
         public int Max { get; set; }
-        public static BindingList<Part> AssociatedParts = new BindingList<Part>();
+        public BindingList<Part> AssociatedParts = new BindingList<Part>();
         public static int CurrentIndexUpper { get; set; }
         public static int CurrentIndexLower { get; set; }
-
+        
       
         public void addAssociatedPart(Part part)
         {
